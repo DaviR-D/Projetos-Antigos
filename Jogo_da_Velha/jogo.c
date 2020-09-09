@@ -2,7 +2,6 @@
 
 void tabuleiro(char [3][3]);
 int fim(char [3][3], char);
-int velha = 0;
 
 int main()
 {
@@ -14,20 +13,13 @@ char letra;
 while(0 < 1)
 {
 tabuleiro(letras);
-if(fim(letras,letra) || velha)
+if(fim(letras,letra))
 {
 for(cont = 0; cont < 3; cont++)
 for(cont2 = 0; cont2 < 3; cont2++)
 letras[cont][cont2]	= ' ';
 tabuleiro(letras);
-if(velha)
-{
-printf("Deu velha!\n");
-velha--;
-}
-else
 printf("Vitória da letra %c!\n", letra);
-turno = 1;
 }
 
 if(erro == 1)
@@ -118,7 +110,7 @@ esp++;
 
 if(esp == 0 && v == 0)
 {
-velha++;
+printf("Deu velha!\n");
 return 1;
 }
 
